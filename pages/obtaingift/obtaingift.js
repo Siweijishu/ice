@@ -57,7 +57,9 @@ Page({
           uid: app.globalData.uid,
           receiver: e.detail.value.name,
           tel: e.detail.value.tel,
-          address_xq: address_xq
+          address_xq: address_xq,
+          sheng: region[0],
+          city: region[1]
         },
         method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
         header: { // 设置请求的 header
@@ -92,7 +94,16 @@ Page({
                 }
               }
             })
-          } else {
+          } else if (ress.data.data == -2) {
+            wx.showModal({
+              title: '领取失败',
+              content: ress.data.status,
+              showCancel: false,
+              success: function (res) {
+              }
+            })
+          } 
+          else {
             wx.showToast({
               title: '领取失败',
               icon: 'none',

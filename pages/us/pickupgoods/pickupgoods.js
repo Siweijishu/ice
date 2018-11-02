@@ -287,6 +287,9 @@ Page({
     if (res.from === "button") {
       let oid = that.data.oid;
       console.log(oid)
+      that.setData({
+        showModal: false
+      })
       return {
         title: "领取礼品",
         path: "/pages/obtaingift/obtaingift?id=" + oid,

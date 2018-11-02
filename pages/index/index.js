@@ -176,25 +176,25 @@ Page({
       path: "/pages/index/index",
       imageUrl: "" /*图片比例500：400*/ ,
       success: function(ress) {
-        console.log('成功');
-        if (app.globalData.uid > 0) {
-          wx.request({
-            url: app.globalData.servsersip + 'api.php/wxfans/share',
-            header: {
-              "content-type": "application/x-www-form-urlencoded"
-            },
-            method: 'POST',
-            success: function(ress) {
-              if (ress.data.data > 0) {
-                wx.showToast({
-                  title: '分享获赠' + ress.data.data + '积分',
-                  duration: 2000,
-                  icon: 'none',
-                })
-              }
-            }
-          })
-        }
+        // console.log('成功');
+        // if (app.globalData.uid > 0) {
+        //   wx.request({
+        //     url: app.globalData.servsersip + 'api.php/wxfans/share',
+        //     header: {
+        //       "content-type": "application/x-www-form-urlencoded"
+        //     },
+        //     method: 'POST',
+        //     success: function(ress) {
+        //       if (ress.data.data > 0) {
+        //         wx.showToast({
+        //           title: '分享获赠' + ress.data.data + '积分',
+        //           duration: 2000,
+        //           icon: 'none',
+        //         })
+        //       }
+        //     }
+        //   })
+        // }
       },
     }
   }
