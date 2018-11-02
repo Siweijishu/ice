@@ -16,7 +16,8 @@ Page({
         lists: [],
         show: false, //判断显示隐藏
         contract: false, // 判断是否同意
-        animationShow: {}
+        animationShow: {},
+        onclick1: false,
     },
     //   关闭｛模态框｝
     close() {
@@ -109,6 +110,7 @@ Page({
                     icon: 'none',
                     duration: 2000
                 })
+                that.onClickAm(that)
                 return false;
             } else if (e.detail.value.address.length == 0) {
                 wx.showToast({
@@ -116,15 +118,20 @@ Page({
                     icon: 'none',
                     duration: 2000
                 })
+                that.onClickAm(that)
                 return false;
             } else {
-                that.setData({
-                    show: true
-                })
-                that.animation.bottom(0).step();
-                that.setData({
-                    animationShow: that.animation.export()
-                })
+                setTimeout(function(){
+                    that.setData({
+                        show: true
+                    })
+                    that.animation.bottom(0).step();
+                    that.setData({
+                        animationShow: that.animation.export()
+                    })
+                },500)
+                
+                that.onClickAm(that)
             }
         } else {
             if (contract == false) {
@@ -133,8 +140,10 @@ Page({
                     icon: 'none',
                     duration: 2000
                 })
+                that.onClickAm(that)
                 return false;
             } else {
+                that.onClickAm(that)
                 var data = [];
                 var lists = that.data.lists
                 data['tel'] = e.detail.value.tel
@@ -217,6 +226,17 @@ Page({
                 });
             }
         }
+    },
+    // 启动按钮动画
+    onClickAm(_this){
+        _this.setData({
+            onclick1: true,
+        })
+        setTimeout(function () {
+            _this.setData({
+                onclick1: false,
+            })
+        }, 500);
     },
     /**
      * 生命周期函数--监听页面加载

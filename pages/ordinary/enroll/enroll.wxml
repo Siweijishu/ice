@@ -49,8 +49,11 @@
             </picker>
         </view>
     </view>
-    <button class='tijiao' formType="submit" data-formNum='1' >提交信息</button>
-<!-- bindtap='moveAnimation' -->
+    <view class='tijiao'>
+        <button class=' {{onclick1==true?"chuantou":""}}' formType="submit" data-formNum='1'>提交信息</button>
+    </view>
+
+    <!-- bindtap='moveAnimation' -->
 
     <view class='am-modal {{show==true?"opent_box":""}}' bindtap='close'>
         <view class='am-zhifu' catchtap='true' animation="{{animationShow}}">
@@ -75,7 +78,10 @@
                     <text class='pay_title'>需支付</text>
                     <text class='pay_momey'>{{lists.money}}元</text>
                 </view>
-                <button class='pay_button' data-formNum='2' formType="submit">立即支付</button>
+                <view class='pay_button'>
+                    <button class='{{onclick1==true?"chuantou":""}}' data-formNum='2' formType="submit">立即支付</button>
+                </view>
+
             </view>
         </view>
     </view>
