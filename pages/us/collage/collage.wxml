@@ -32,7 +32,7 @@
           <view class='goods_content'>
             <view class='goods_title'>
               <navigator url="../../details/details?id={{item.goods_id}}">
-                <text>{{item.name}}</text>
+                <text>{{item.goods_title}}</text>
               </navigator>
               <view class='color_text money'>单价：{{item.price}}</view>
               <view class='color_text num'>数量：x{{item.num}}</view>
