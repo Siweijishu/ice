@@ -56,8 +56,8 @@ Page({
                       title: '支付完成',
                       icon: 'success',
                       success: function(res) {
-                        wx.redirectTo({
-                          url: '../receive/payment/payment?id=' + data['id'],
+                          wx.switchTab({
+                            url: '../index/index',
                         })
                       },
                     })
