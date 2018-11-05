@@ -11,6 +11,7 @@ Page({
     formbtn: false,
     // 展示更多
     clickMore: false,
+    onAm:false,
   },
   bindRegionChange: function(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -28,6 +29,8 @@ Page({
   },
   // 领取礼品
   formSubmit: function(e) {
+    let that=this;
+    that.onClickAm(that);
     if (e.detail.value.name.length == 0 || e.detail.value.name == 'undefined'){
       wx.showToast({
         title: '请填写收货人姓名',
@@ -47,7 +50,6 @@ Page({
         duration: 2000
       })
     }else{
-      var that = this
       var region = that.data.region
       var address_xq = region[0] + region[1] + region[2] + e.detail.value.detaddress
       wx.request({
@@ -123,6 +125,17 @@ Page({
     }
     console.log('form发生了submit事件，携带数据为：', e.detail.value);
   },
+    // 启动按钮动画
+    onClickAm(_this) {
+        _this.setData({
+            onAm: true,
+        })
+        setTimeout(function () {
+            _this.setData({
+                onAm: false,
+            })
+        }, 300);
+    },
   /**
    * 生命周期函数--监听页面加载
    */

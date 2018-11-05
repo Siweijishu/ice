@@ -57,7 +57,7 @@
             </view>
 
             <view class="btn-area">
-                <button formType="submit">领取礼品</button>
+                <button class='{{onAm==true?"chuantou":""}}' formType="submit">领取礼品</button>
             </view>
         </form>
     </view>
