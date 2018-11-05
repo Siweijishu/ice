@@ -28,5 +28,5 @@
     <view class='tips' wx:if="{{addresslist.length==0}}"> 您还没有添加地址哦~</view>
 </view>
 <view class='addBtn {{addresslist.length<3?"btnfiex":""}}'>
-    <button catchtap="jump_addAddress">添加收货地址</button>
+    <button class="{{onAm==true?'chuantou':''}}"  catchtap="jump_addAddress">添加收货地址</button>
 </view>

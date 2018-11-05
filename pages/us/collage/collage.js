@@ -141,10 +141,48 @@ Page({
       content: '是否取消订单',
       success: function(res) {
         if (res.confirm) {
-          goodsList[index].state = -1;
-          _this.setData({
-            goodsList: goodsList
-          })
+            wx.request({
+                url: app.globalData.servsersip + 'api.php/wxfans/orders_edit',
+                method: 'post',
+                data: {
+                    id: goodsList[index].id,
+                    uid: app.globalData.uid,
+                },
+                header: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                success: function (res) {
+                    //--init data
+                    var status = res.data.data;
+                    if (status == 1) {
+                        wx.showToast({
+                            title: '操作成功！',
+                            duration: 2000
+                        });
+                        goodsList[index].status = -1;
+                        _this.setData({
+                            goodsList: goodsList
+                        })
+                    } else {
+                        wx.showToast({
+                            title: res.data.err,
+                            duration: 2000
+                        });
+                    }
+                },
+                fail: function () {
+                    // fail
+                    wx.showToast({
+                        title: '网络异常！',
+                        duration: 2000
+                    });
+                }
+            });
+        //   goodsList[index].state = -1;
+          
+        //   _this.setData({
+        //     goodsList: goodsList
+        //   })
         } else if (res.cancel) {
           console.log('用户点击取消')
         }

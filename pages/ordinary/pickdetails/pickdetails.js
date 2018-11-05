@@ -28,6 +28,7 @@ Page({
     // 判断显示隐藏地址与邮费和其他信息
     caseNum: null,
     showModal: false,
+      onAm:false,
   },
   select_give(e) {
     let index = e.currentTarget.dataset.index;
@@ -116,6 +117,7 @@ Page({
     data['goods_num'] = lists.num
     data['openid'] = app.globalData.myopenid
     data['is_receive'] = caseNum
+      that.onClickAm(that);
     // 提货
     if (lists.is_freight == false && caseNum == 2) {
       wx.showToast({
@@ -240,8 +242,21 @@ Page({
       }
     });
   },
+    // 启动按钮动画
+    onClickAm(_this) {
+        _this.setData({
+            onAm: true,
+        })
+        setTimeout(function () {
+            _this.setData({
+                onAm: false,
+            })
+        }, 300);
+    },
   // 提货
   jump_coladdress() {
+    let that=this;
+    that.onClickAm(_this);
     wx.navigateTo({
       url: '../../ordinary/coladdress/coladdress?goods=' + this.data.goods + '&types=2',
     })

@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    addresslist: []
+    addresslist: [],
+      onAm:false
   },
   //   选择默认；
   select_default(e) {
@@ -137,9 +138,18 @@ Page({
   },
   // 新增地址
   jump_addAddress() {
-    wx.navigateTo({
-      url: '../../receive/add/add',
-    })
+      let that=this;
+      that.setData({
+          onAm: true
+      })
+    setTimeout(function(){
+        wx.navigateTo({
+            url: '../../receive/add/add',
+        })
+        that.setData({
+            onAm: false
+        })
+    },300)
   },
   /**
    * 生命周期函数--监听页面加载

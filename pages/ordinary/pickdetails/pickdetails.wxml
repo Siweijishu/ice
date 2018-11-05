@@ -76,7 +76,7 @@
     </view>
 </view>
 <view class='btn'>
-    <button class='atonce' catchtap='jump_pickupgoods'>{{caseNum==1?"提货赠送":"立即提货"}}</button>
+    <button class='atonce {{onAm==true?"chuantou":""}}' catchtap='jump_pickupgoods'>{{caseNum==1?"提货赠送":"立即提货"}}</button>
 </view>
 
 <view class='showModal' wx:if="{{showModal==true}}">

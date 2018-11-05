@@ -26,6 +26,6 @@
         <view class='icontext'>设置默认地址</view>
     </view>
     <view class="btn-area">
-        <button formType="submit">保存地址</button>
+        <button class="{{onAm==true?'chuantou':''}}" formType="submit">保存地址</button>
     </view>
 </form>

@@ -12,7 +12,8 @@ Page({
       customItem: '全部',
       detAddress: "",
       selected: false,
-      is_default:0
+      is_default:0,
+      onAm:false
     },
     selected() {
       var selected = this.data.selected;
@@ -41,74 +42,90 @@ Page({
     // 提交表单
   formSubmit(e) {
     var that = this
-    if (e.detail.value.name.length == 0) {
-      wx.showModal({
-        title: '提示',
-        content: '收货人不能为空',
-        success: function (res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          }
-        }
-      })
-    }else if (e.detail.value.tel.length == 0) {
-      wx.showModal({
-        title: '提示',
-        content: '电话密码不能为空',
-        success: function (res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          }
-        }
-      })
-    } else {
-      wx.request({
-        url: app.globalData.servsersip + 'api.php/Wxfans/newaddress',
-        data: {
-          id: 0,
-          name: e.detail.value.name,
-          tel: e.detail.value.tel,
-          address: e.detail.value.address,
-          uid: app.globalData.uid,
-          openid: app.globalData.myopenid,
-          sheng: that.data.region[0],
-          city: that.data.region[1],
-          quyu: that.data.region[2],
-          is_default: that.data.is_default
-        },
-        header: {
-          "content-type": "application/x-www-form-urlencoded"
-        },
-        method: 'POST',
-        success: function (res) {
-          console.log(res.data.data)
-          var datas = res.data.data
-          if (datas == 0) {
+    setTimeout(function(){
+        if (e.detail.value.name.length == 0) {
             wx.showModal({
-              title: '提示',
-              content: '保存失败',
-              success: function (res) {
-                if (res.confirm) {
-                  console.log('用户点击确定')
+                title: '提示',
+                content: '收货人不能为空',
+                success: function (res) {
+                    if (res.confirm) {
+                        console.log('用户点击确定')
+                    }
                 }
-              }
             })
-          } else {
-            wx.showToast({
-              title: '成功',
-              icon: 'success',
-              duration: 2000
+        } else if (e.detail.value.tel.length == 0) {
+            that.onClickAm(that);
+            wx.showModal({
+                title: '提示',
+                content: '电话密码不能为空',
+                success: function (res) {
+                    if (res.confirm) {
+                        console.log('用户点击确定')
+                    }
+                }
             })
-
-            wx.navigateBack({
-              delta: 1
+        } else {
+            wx.request({
+                url: app.globalData.servsersip + 'api.php/Wxfans/newaddress',
+                data: {
+                    id: 0,
+                    name: e.detail.value.name,
+                    tel: e.detail.value.tel,
+                    address: e.detail.value.address,
+                    uid: app.globalData.uid,
+                    openid: app.globalData.myopenid,
+                    sheng: that.data.region[0],
+                    city: that.data.region[1],
+                    quyu: that.data.region[2],
+                    is_default: that.data.is_default
+                },
+                header: {
+                    "content-type": "application/x-www-form-urlencoded"
+                },
+                method: 'POST',
+                success: function (res) {
+                    console.log(res.data.data)
+                    that.onClickAm(that);
+                    var datas = res.data.data
+                    if (datas == 0) {
+                        wx.showModal({
+                            title: '提示',
+                            content: '保存失败',
+                            success: function (res) {
+                                if (res.confirm) {
+                                    console.log('用户点击确定')
+                                }
+                               
+                            }
+                        })
+                    } else {
+                        that.onClickAm(that);
+                        wx.showToast({
+                            title: '成功',
+                            icon: 'success',
+                            duration: 2000
+                        })
+                        wx.navigateBack({
+                            delta: 1
+                        })
+                    }
+                }
             })
-          }
         }
-      })
-    }
+    },300);
+      that.onClickAm(that);
   },
-
+    // 启动按钮动画
+    onClickAm(_this) {
+        _this.setData({
+            onAm: true,
+        })
+        setTimeout(function () {
+            _this.setData({
+                onAm: false,
+            })
+        }, 300);
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
