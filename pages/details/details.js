@@ -105,7 +105,11 @@ Page({
     this.stopanimation();
   },
   jump_join() {
-    var that = this
+    var that = this;
+    let show = this.data.show;
+      this.setData({
+          show: false
+      })
     wx.request({
       url: app.globalData.servsersip + 'api.php/wxfans/addshop',
       data: {
@@ -127,6 +131,7 @@ Page({
         }
       }
     })
+      this.stopanimation();
   },
   // 大图浏览
   seePicture(e) {

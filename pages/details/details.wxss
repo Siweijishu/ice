@@ -22,7 +22,7 @@ page{
     left: 0;
     right:0 ;
     margin: 0 auto;
-    bottom: -30rpx;
+   bottom:20rpx;
     display: flex;
     justify-content: center;
 }
@@ -130,6 +130,10 @@ page{
     line-height: 60rpx; 
     background:#3B8BFE;
     color:#fff; 
+    position: fixed;
+    top: 30rpx;
+    right: 30rpx;
+    z-index: 99999;
 }
 .jionCar .iconfont {
     font-size:35rpx;
@@ -443,14 +447,12 @@ button::after{
     flex-wrap: wrap;
 }
 .picture_list{
-    width: 230rpx;
-    height: 230rpx;
-    flex-shrink: 0;
-    margin-bottom: 10rpx;
-    margin-right:10rpx; 
-}
-.picture_list:nth-child(3),.picture_list:nth-child(6),.picture_list:nth-child(9){
-    margin-right:0; 
+    width:130rpx;
+    height:130rpx;
+    flex-shrink:0;
+    margin-bottom:35rpx;
+    margin-right:25rpx;
+    margin-left:25rpx;
 }
 .picture_list image{
     width: 100%;

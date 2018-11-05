@@ -1,4 +1,7 @@
 <import src="../../wxParse/wxParse.wxml" />
+<view class='jionCar' catchtap='jump_jionCar'>
+    <text class='iconfont icon-gouwucheman'></text>
+</view>
 <view class='goods_detailbox'>
     <view class="recommend">
         <view class="swiper-container">
@@ -29,9 +32,6 @@
                     <text class='member'>会员价￥{{lists.price}}</text>|
                     <text class='originally'>原价￥{{lists.cost_price}}</text>
                 </view>
-                <view class='jionCar' catchtap='jump_jionCar'>
-                    <text class='iconfont icon-gouwucheman'></text>
-                </view>
             </view>
             <view class='goods_detail'>
                 运费：0.00-{{lists.freight}}
@@ -43,15 +43,19 @@
     </view>
     <view class='det_border'>
         <view class="menu_box">
-            <view class='menu' ><text class='{{menuTapCurrent=="0"?"borders":""}}' data-current="0" catchtap="menuTap">商品介绍</text></view>
-            <view class='menu '><text class='{{menuTapCurrent=="1"?"borders":""}}' data-current="1" catchtap="menuTap">用户评价</text></view>
+            <view class='menu'>
+                <text class='{{menuTapCurrent=="0"?"borders":""}}' data-current="0" catchtap="menuTap">商品介绍</text>
+            </view>
+            <view class='menu '>
+                <text class='{{menuTapCurrent=="1"?"borders":""}}' data-current="1" catchtap="menuTap">用户评价</text>
+            </view>
         </view>
 
         <view class="tab" hidden="{{menuTapCurrent!='0'}}">
             <view class='detail_content'>
                 <!-- <image mode='widthFix' wx:for="{{piclist}}" wx:key="" src='{{item}}' bindtap="changePreview" data-src="{{item}}"></image> -->
                 <block wx:if="{{lists.content != null && lists.content != ''}}">
-                  <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+                    <template is="wxParse" data="{{wxParseData:content.nodes}}" />
                 </block>
             </view>
         </view>
@@ -65,7 +69,7 @@
                         </view>
                         <view class='otherNane'>{{other.u_name}}</view>
                     </view>
-                    <view class='score_box' >
+                    <view class='score_box'>
                         <text class='iconfont icon-xingxing' wx:for="{{other.level}}" wx:key="" wx:for-item="score"></text>
                     </view>
                 </view>
@@ -73,12 +77,12 @@
                     {{other.content}}
                 </view>
                 <view class='detail_picture' wx:if="{{other.pictureList != ''}}">
-                    <view class='picture_list' wx:for="{{other.pictureList}}" wx:key="" >
-                        <image mode='aspectFit'  bindtap="seePicture" data-lock="{{item}}" data-index="{{idx}}" src="{{item}}"></image>
+                    <view class='picture_list' wx:for="{{other.pictureList}}" wx:key="">
+                        <image mode='aspectFit' bindtap="seePicture" data-lock="{{item}}" data-index="{{idx}}" src="{{item}}"></image>
                     </view>
                 </view>
                 <view class='detail_time'>
-                   {{other.createdate}}
+                    {{other.createdate}}
                 </view>
             </view>
         </view>

@@ -20,6 +20,7 @@
                         <text class='goods_Num'>{{item.num}}</text>
                         <text class='iconfont icon-add'  catchtap='addCount' data-index="{{index}}"></text>
                     </view>
+                    <view class='del_btn' catchtap='del_goods' data-index='{{index}}'>删除</view>
                 </view>
             </view>
         </view>

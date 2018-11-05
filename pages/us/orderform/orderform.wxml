@@ -18,7 +18,7 @@
                  <text class='state_text' wx:elif="{{item.status==-2}}">已退款</text>
             </view>
         </view>
-        <view class='goods_detailsNum'>
+        <view class='goods_detailsNum' bindtap='jump_coldetails' data-index="{{index}}">
             <view class=' {{item.goods.length>2?"goods_detailsheigth":""}} {{item.maxheigrh==true?"select_goods":""}}'>
                 <view class='goods_details' wx:for="{{item.goods}}" wx:key="">
                     <view class='goods_img' data-index='{{index}}'>

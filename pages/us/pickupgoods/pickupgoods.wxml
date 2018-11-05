@@ -5,8 +5,8 @@
     <text class='menu2 {{menuTapCurrent=="4"?"borders":""}}' data-current="4" catchtap="menuTap">已发货</text>
 </view>
 <view class="tab1">
-    <view class='goodsList' wx:for="{{goodsList}}" wx:key="" bindtap='jump_confirm' data-index='{{index}}'>
-        <view class='goods_bianhao'>
+    <view class='goodsList' wx:for="{{goodsList}}" wx:key="">
+        <view class='goods_bianhao'  bindtap='jump_confirm' data-index='{{index}}'>
             <view class='goods_bianhaoNum'>订单编号：{{item.order_sn}}</view>
             <view class='goods_schedule'>
                 <text wx:if="{{item.status==-2}}">已退款</text>
@@ -17,7 +17,7 @@
                 <text wx:elif="{{item.status>=4}}">已完成</text>
             </view>
         </view>
-        <view class='goods_details'>
+        <view class='goods_details'  bindtap='jump_confirm' data-index='{{index}}'>
             <view class='goods_list' style='width:{{item.goods.length>1?"590rpx":""}}'>
                 <view class='goods_img' wx:for="{{item.goods}}" wx:key="" data-index='{{index}}'>
                     <navigator url="../../details/details?id={{item.goods_id}}">

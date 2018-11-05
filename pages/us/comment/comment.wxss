@@ -71,9 +71,9 @@ image{
     flex-wrap: wrap;
 }
 .goods-picture-list{
-    width: 230rpx;
-    height: 230rpx;
-    margin: 10rpx .08em 0;
+    width:130rpx;
+    height:130rpx;
+    margin:0 20rpx 40rpx;
 }
 .goods-picture-fore{
     width:350rpx;

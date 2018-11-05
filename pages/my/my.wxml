@@ -7,8 +7,7 @@
         <image src='{{userinfo.avatarurl?userinfo.avatarurl:userinfo.avatarUrl}}'></image>
     </view>
     <view class='userName'>{{userinfo.nickname?userinfo.nickname:userinfo.nickName}}</view>
-    <view class='useraddress' wx:if='{{userinfo.province != "" && userinfo.province != null}}'>{{userinfo.province}}{{userinfo.city}}</view>
-    <view class='useraddress' wx:el>{{userinfo.country}}</view>
+    <view class='useraddress' wx:if='{{userinfo.province != "" && userinfo.province != null}}'>{{userinfo.province}}    {{userinfo.city}}    {{userinfo.country}}</view>
     <view class='user-kefu-button'>
         <button class='user-kefu' open-type='contact' session-from="weapp">
             <view class='toolicon tooliconSix'>

@@ -12,7 +12,7 @@ button::after{
 }
 .menu1,.menu2{
     flex: 1;
-    font-size:35rpx;
+    font-size:30rpx;
     line-height: 80rpx;
     text-align: center;
     color: #9d9d9d;
@@ -20,7 +20,7 @@ button::after{
 .borders{
     color: #f00;
     position: relative;
-    font-size:32rpx;
+    font-size:30rpx;
 }
 .borders::after{
   position: absolute;
@@ -56,7 +56,7 @@ button::after{
 .goods_bianhaoNum{
     text-indent: 1em;
     position: relative;
-    width: 400rpx;
+    width: 80%;
     flex-shrink: 0;
 }
 .goods_bianhaoNum::after{
@@ -76,7 +76,7 @@ navigator{
     height: 100%;
 }
 .goods_schedule{
-    width: 250rpx;
+    width:20%;
     flex-shrink:0; 
     text-align: right;
 }

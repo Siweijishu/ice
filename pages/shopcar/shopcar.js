@@ -12,7 +12,7 @@ Page({
     pagenum: 1,
     // 是否全选
     selectall: false,
-    goodsList: []
+    goodsList: [],
   },
   //   跳页面
   jump_details(e) {
@@ -66,6 +66,29 @@ Page({
     this.getTotalPrice();
     this.shopgoods(index);
   },
+    //   del_goods删除
+    del_goods(e){
+        
+        let index = e.currentTarget.dataset.index;
+        let goodsList = this.data.goodsList;
+        let that=this;
+        wx.showModal({
+            title: '提示',
+            content: '确定要删除该商品吗？亲',
+            success:function(del){
+                if (del.confirm){
+                    let delGoods = goodsList.splice(index, 1);
+                    that.setData({
+                        goodsList: goodsList
+                    })
+                    wx.showToast({
+                        title: '删除成功',
+                        icon:'success'
+                    })
+                }
+            }
+        })
+    },
   // 减
   minusCount(e) {
     const index = e.currentTarget.dataset.index;
