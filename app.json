@@ -1,6 +1,5 @@
 {
     "pages": [
-        "pages/coupon/coupon",
         "pages/index/index",
         "pages/member/member",
         "pages/obtaingift/obtaingift",
@@ -10,7 +9,7 @@
         "pages/shopcar/shopcar",
         "pages/incollage/incollage",
         "pages/details/details",
-        
+        "pages/coupon/coupon",
         "pages/coldetails/coldetails",
         "pages/payfound/payfound",
         "pages/login/login"
