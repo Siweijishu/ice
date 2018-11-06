@@ -26,7 +26,7 @@ Page({
         let that = this;
         wx.showModal({
             title: '提示',
-            content: '确定要删除该商品吗？亲',
+            content: '确定要删除该商品评论吗？亲',
             success: function (del) {
                 if (del.confirm) {
                     wx.request({
