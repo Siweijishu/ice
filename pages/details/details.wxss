@@ -451,8 +451,9 @@ button::after{
     height:130rpx;
     flex-shrink:0;
     margin-bottom:35rpx;
-    margin-right:25rpx;
-    margin-left:25rpx;
+    margin-right:20rpx;
+    margin-left:20rpx;
+
 }
 .picture_list image{
     width: 100%;
