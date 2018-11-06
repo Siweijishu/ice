@@ -3,9 +3,8 @@
 </view>
 <view class='takedetails'>
     <view class='takedetails_box'>
-        <view class='take_Title'>
-            <view>订单详情</view>
-             <view class='take_state'>
+        <view class='take_Title'>订单详情</view>
+        <view class='take_state'>
             <text class='iconfont icon-banbenxinxi'></text>
             <view class='state_Text' wx:if="{{pickupgoods.status==1}}">订单状态：待付款</view>
             <view class='state_Text' wx:elif="{{pickupgoods.status==2}}">订单状态：待拼团</view>
@@ -13,8 +12,6 @@
             <view class='state_Text' wx:elif="{{pickupgoods.status==-1}}">订单状态:已取消</view>
             <view class='state_Text' wx:else>订单状态:已完成</view>
         </view>
-        </view>
-       
         <view class='goodsList '>
             <view class='{{pickupgoods.goods.length>2?"goods_hei":""}} {{pickupgoods.goodsHeigth==true?"goods_heiOne":""}}'>
                 <view class='goodsbox' wx:for="{{pickupgoods.goods}}" wx:key="">

@@ -27,14 +27,11 @@
 .take_Title{
     font-size: 36rpx;
     margin-top:60rpx; 
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
 }
 .take_state{
     display: flex;
     align-items: center;
-    /* padding:30rpx 0; */
+    padding:30rpx 0;
 }
 .iconfont{
     font-size: 30rpx; 
@@ -47,8 +44,7 @@
 }
 
 .goodsList{
-    /* padding: 35rpx 0; */
-    padding-top:15px;
+    padding: 35rpx 0;
 }
 .goodsbox{
     height: 215rpx;
@@ -124,7 +120,7 @@
 .confirm_t{
     color:#000;
     font-size:24rpx;
-    margin-bottom:16rpx;
+    margin-bottom:35rpx;
 }
 .confirm_t:last-child{
     margin-bottom:0;

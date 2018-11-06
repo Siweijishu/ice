@@ -3,16 +3,13 @@
 </view>
 <view class='takedetails'>
     <view class='takedetails_box'>
-        <view class='take_Title'>
-            <view>订单详情</view>
-            <view class='take_state'>
-                <text class='iconfont icon-banbenxinxi'></text>
-                <view class='state_Text' wx:if="{{pickupgoods.status==1}}">订单状态：待付款</view>
-                <view class='state_Text' wx:elif="{{pickupgoods.status == -1}}">订单状态：已取消</view>
-                <view class='state_Text' wx:else="{{pickupgoods.status>1}}">订单状态:已完成</view>
-            </view>
+        <view class='take_Title'>订单详情</view>
+        <view class='take_state'>
+            <text class='iconfont icon-banbenxinxi'></text>
+            <view class='state_Text' wx:if="{{pickupgoods.status==1}}">订单状态：待付款</view>
+            <view class='state_Text' wx:elif="{{pickupgoods.status == -1}}">订单状态：已取消</view>
+            <view class='state_Text' wx:else="{{pickupgoods.status>1}}">订单状态:已完成</view>
         </view>
-
         <view class='goodsList '>
             <view class='{{pickupgoods.goods.length>2?"goods_hei":""}} {{pickupgoods.goodsHeigth==true?"goods_heiOne":""}}'>
                 <view class='goodsbox' wx:for="{{pickupgoods.goods}}" wx:key="">
@@ -84,7 +81,7 @@
             <button class='red_btn' open-type="share" wx:if="{{pickupgoods.status >1}}">分享优惠卷</button>
             <!--pickupgoods.state 判断状态值是否显示  -->
             <button class='fff_btn' catchtap='confirm_btn' wx:if="{{pickupgoods.status ==1}}">取消订单</button>
-            <button class='fff_btn' open-type="contact" session-from="weapp" wx:if="{{pickupgoods.status >1}}">申请售后</button>
+             <button class='fff_btn' open-type="contact" session-from="weapp"  wx:if="{{pickupgoods.status >1}}">申请售后</button>
         </view>
     </view>
 </view>
