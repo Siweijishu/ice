@@ -71,15 +71,29 @@ Page({
         
         let index = e.currentTarget.dataset.index;
         let goodsList = this.data.goodsList;
+        console.log(goodsList)
         let that=this;
         wx.showModal({
             title: '提示',
             content: '确定要删除该商品吗？亲',
             success:function(del){
                 if (del.confirm){
-                    let delGoods = goodsList.splice(index, 1);
-                    that.setData({
-                        goodsList: goodsList
+                    wx.request({
+                        url: app.globalData.servsersip + 'api.php/wxfans/del_shopcar',
+                        data:{
+                            id: goodsList[index].id
+                        },
+                        method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+                        header: { // 设置请求的 header
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        success:function(res){
+                            console.log(res)
+                            let delGoods = goodsList.splice(index, 1);
+                            that.setData({
+                                goodsList: goodsList
+                            })
+                        }
                     })
                     wx.showToast({
                         title: '删除成功',

@@ -5,32 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    Mycomment:[
-        { 
-            goodsName: "Tip Top香草味冰淇淋",
-            goodsImg: "../../../img/ice2.jpg",
-            score:["1","2","3","4","5"], 
-            contem_text: "从以前开始就爱吃这个牌子的冰激凌，感觉非常好，吃起来口感超级醇正，跟在新西兰买的吃起来口感一模一样，上次做活动也非常划算！包装寄过来的时候保存得很完整，量也很多。希望商家越做越好吧！", 
-            time:"2018/09/1 09:16:28",
-            picture_list: ["http://img3.imgtn.bdimg.com/it/u=4214723282,987522149&fm=26&gp=0.jpg", "http://img4.imgtn.bdimg.com/it/u=3054891382,500449320&fm=11&gp=0.jpg","http://img5.imgtn.bdimg.com/it/u=1386096481,282140200&fm=11&gp=0.jpg"]
-            },
-        {
-            goodsName: "Tip Top香草味冰淇淋",
-            goodsImg: "../../../img/ice2.jpg",
-            score: ["1", "2", "3", "4"],
-            contem_text: "从以前开始就爱吃这个牌子的冰激凌，感觉非常好，吃起来口感超级醇正，跟在新西兰买的吃起来口感一模一样，上次做活动也非常划算！包装寄过来的时候保存得很完整，量也很多。希望商家越做越好吧！",
-            time: "2018/09/1 09:16:28",
-            picture_list: []
-        },
-        {
-            goodsName: "Tip Top香草味冰淇淋",
-            goodsImg: "../../../img/ice2.jpg",
-            score: ["1", "2",],
-            contem_text: "从以前开始就爱吃这个牌子的冰激凌，感觉非常好，吃起来口感超级醇正，跟在新西兰买的吃起来口感一模一样，上次做活动也非常划算！包装寄过来的时候保存得很完整，量也很多。希望商家越做越好吧！",
-            time: "2018/09/1 09:16:28",
-            picture_list: ["http://img0.imgtn.bdimg.com/it/u=2703674299,2474969949&fm=26&gp=0.jpg", "http://img3.imgtn.bdimg.com/it/u=4214723282,987522149&fm=26&gp=0.jpg", "http://img5.imgtn.bdimg.com/it/u=1386096481,282140200&fm=11&gp=0.jpg", "http://img4.imgtn.bdimg.com/it/u=2947110516,2186953292&fm=26&gp=0.jpg"]
-        }
-    ],
+    Mycomment:[ ],
     pagenum: 1
   },
     changePreview(e){
@@ -42,6 +17,41 @@ Page({
         wx.previewImage({
             current: see[index],
             urls: see,
+        })
+    },
+    del_see(e){
+        let index = e.currentTarget.dataset.index;
+        let Mycomment = this.data.Mycomment;
+        console.log(Mycomment)
+        let that = this;
+        wx.showModal({
+            title: '提示',
+            content: '确定要删除该商品吗？亲',
+            success: function (del) {
+                if (del.confirm) {
+                    wx.request({
+                        url: app.globalData.servsersip + 'api.php/wxfans/del_evaluate',
+                        data: {
+                            id: Mycomment[index].id
+                        },
+                        method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+                        header: { // 设置请求的 header
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        success: function (res) {
+                            console.log(res)
+                            let delGoods = Mycomment.splice(index, 1);
+                            that.setData({
+                                Mycomment: Mycomment
+                            })
+                        }
+                    })
+                    wx.showToast({
+                        title: '删除成功',
+                        icon: 'success'
+                    })
+                }
+            }
         })
     },
   /**
@@ -68,6 +78,7 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
+          console.log(res.data.data)
         if (res.data.data.length > 0) {
           if (that.data.pagenum == 1) {
             var l = []

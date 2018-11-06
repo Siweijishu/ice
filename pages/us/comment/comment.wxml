@@ -18,5 +18,8 @@
             <image mode='aspectFit' src='{{item}}' bindtap="changePreview" data-see='{{see}}' data-index='{{index}}'></image>
         </view>
     </view>
-    <view class='time'>{{see.time}}</view>
+    <view class='time'>
+        <view>{{see.createdate}}</view>
+        <view class='del_see' catchtap='del_see' data-index="{{index}}">删除</view>
+    </view>
 </view>

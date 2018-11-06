@@ -12,7 +12,7 @@ image{
     padding: 20rpx 0;
 }
 .comment_list_box:last-child{
-    padding-bottom: 50rpx;
+    padding-bottom: none;
 }
 .comment-top-box,.comment-top{
     display: flex;
@@ -73,8 +73,9 @@ image{
 .goods-picture-list{
     width:130rpx;
     height:130rpx;
-    margin:0 20rpx 40rpx;
+    margin:0 20rpx 20rpx;
 }
+
 .goods-picture-fore{
     width:350rpx;
     height: 350rpx;
@@ -85,4 +86,18 @@ image{
     color: #9d9d9d;
     width: 710rpx ; 
     margin: 20rpx auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.time view{
+    flex-shrink: 0;
+}
+.del_see{
+    background: #f33;
+    width: 100rpx;
+    padding: 10rpx 0;
+    border-radius:5rpx;
+    color: #fff;
+    text-align: center; 
 }
