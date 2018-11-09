@@ -1,5 +1,6 @@
 {
     "pages": [
+        
         "pages/index/index",
         "pages/member/member",
         "pages/obtaingift/obtaingift",
@@ -12,6 +13,7 @@
         "pages/coupon/coupon",
         "pages/coldetails/coldetails",
         "pages/payfound/payfound",
+        "pages/activity/activity",
         "pages/login/login"
     ],
     "window": {

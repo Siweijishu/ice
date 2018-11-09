@@ -1,0 +1,15 @@
+page{
+    background: #f9f9f9;
+}
+.activity{
+    width: 700rpx;
+    margin: 10rpx auto;
+    border-radius:10rpx;
+    overflow: hidden; 
+}
+.activity .img{
+    width: 100%;
+}
+.activity .img image{
+    width: 100%;
+}
