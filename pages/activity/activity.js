@@ -1,4 +1,6 @@
 // pages/activity/activity.js
+const app = getApp();
+var WxParse = require('../../wxParse/wxParse.js');
 Page({
 
     /**
@@ -12,7 +14,29 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+      var id = options.id;
+      console.log(id)
+      var that = this;
+      wx.request({
+        url: app.globalData.servsersip + 'api.php/wxfans/activity',
+        data: {
+          id: options.id,
+        },
+        header: {
+          "content-type": "application/x-www-form-urlencoded"
+        },
+        method: 'POST',
+        success: function (res) {
+          var content = res.data.data
+          console.log(content)
+          that.setData({
+            content: res.data.data
+          });
+          if (content != null && content != "") {
+            WxParse.wxParse('content', 'html', content, that, 3);
+          }
+        }
+      })
     },
 
     /**

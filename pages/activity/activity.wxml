@@ -1,5 +1,9 @@
+<import src="../../wxParse/wxParse.wxml" />
 <view class='activity'>
     <view class="img">
-        <image   mode='widthFix' src='http://img.hb.aicdn.com/beccde36b18b0bbb85306489d8542b1089f7cdc7125ff2-KbiEfU_fw658'></image>
+        <!-- <image   mode='widthFix' src='http://img.hb.aicdn.com/beccde36b18b0bbb85306489d8542b1089f7cdc7125ff2-KbiEfU_fw658'></image> -->
+        <block wx:if="{{content != null && content != ''}}">
+            <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+        </block>
     </view>
 </view>
