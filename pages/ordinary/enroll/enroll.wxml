@@ -14,6 +14,10 @@
             <input type='text' name="address" placeholder='您所在的城市'></input>
             <text>告诉我们您所在的城市，以便我们为您制定个性化服务</text>
         </view>
+        <view class='enroll_input'>
+            <input type='number' name="t_tel" placeholder='推荐人电话'></input>
+            <text>输入推荐人电话，可让推荐人获得积分，等级升的更快哦~（仅限会员）</text>
+        </view>
         <view class='select_sex'>
             <view class='people man {{man==true?"enroll_blueSex":""}}' catchtap='select_man'>男</view>
             <view class='people woman {{woman==true?"enroll_blueSex":""}}' catchtap='select_woman'>女</view>
