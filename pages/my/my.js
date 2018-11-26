@@ -7,7 +7,15 @@ Page({
    */
   data: {
       tipsShow: true,
+      showCode:false,
   },    
+    show_code(){
+        let showCode = this.data.showCode;
+        showCode =! showCode;
+        this.setData({
+            showCode: showCode,
+        })
+    },
     tipsShow() {
         let tipsShow = this.data.tipsShow;
         tipsShow = false;
