@@ -173,6 +173,22 @@ Page({
   },
   jump_pay() {
     let sellnum = this.data.sellnum;
+    var userinfo = app.globalData.userInfo
+    var black = parseInt(userinfo.black)
+    if (black != 0) {
+      wx.showModal({
+        title: '提示',
+        content: '您的账户为黑名单用户，不可下单。详情请联系客服。',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else {
+            console.log('用户点击取消')
+          }
+        }
+      })
+      return false;
+    }
     if (sellnum == 0) {
       wx.showToast({
         title: '请勾选商品',
@@ -197,6 +213,22 @@ Page({
 
   },
   jump_launch() {
+    var userinfo = app.globalData.userInfo
+    var black = parseInt(userinfo.black)
+    if (black != 0) {
+      wx.showModal({
+        title: '提示',
+        content: '您的账户为黑名单用户，不可下单。详情请联系客服。',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else {
+            console.log('用户点击取消')
+          }
+        }
+      })
+      return false;
+    }
     let sellnum = this.data.sellnum;
     if (sellnum == 0) {
       wx.showToast({

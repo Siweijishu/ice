@@ -84,12 +84,12 @@
             <text class='iconfont icon-right1'></text>
         </view>
     </view>
-    <view class='mytool' catchtap='show_code'>
+    <view class='mytool' catchtap='show_code' wx:if='{{userinfo.is_clerk == 1}}'>
         <view class='tooltitle'>
             <view class='toolicon tooliconFive'>
                 <image mode='aspectFit' src='../../img/co.png'></image>
             </view>
-            <view class='tooltext'>扫码</view>
+            <view class='tooltext'>推荐码</view>
         </view>
     </view>
 </view>
@@ -98,6 +98,6 @@
 </view>
 <view class='showCode' wx:if="{{showCode==true}}" bindtap='show_code'>
     <view class='class_code' catchtap="stop">
-        <image src='../../img/showCode.png'></image>
+        <image src='https://www.ice-tech.com.cn/{{userinfo.qrcode}}'></image>
     </view>
 </view>

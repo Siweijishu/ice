@@ -1,6 +1,6 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function (Object) {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -41,9 +41,14 @@ App({
                       that.globalData.userInfo = ress.data.data
                       console.log(that.globalData)
                     } else {
+                      if (Object.path == "pages/login/login"){
+                        
+                      }else{
                         wx.navigateTo({
                           url: '../login/login?types=2',
                         })
+                      }
+                        
                     }
                   }
                 })
