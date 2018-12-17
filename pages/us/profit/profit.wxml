@@ -1,0 +1,34 @@
+<view class='lable_tab'>
+    <view class='profit_box'>收益</view>
+    <view class='profit_box' bindtap='select_moode'>
+        
+        <view class='showMood'>{{moomNum}}<text class='iconfont icon-triangle-bottom'></text></view>
+        <picker-view wx:if="{{show==true}}"
+        indicator-style="height: 50px;"
+        style="width: 100%; height: 300rpx;"
+        value="{{value}}"
+        bindchange="bindChange"
+        >
+        <picker-view-column>
+            <view wx:for="{{years}}" wx:key="" style="line-height: 50px">{{item}}年</view>
+            </picker-view-column>
+            <picker-view-column>
+            <view wx:for="{{months}}" wx:key="" style="line-height: 50px">{{item}}月</view>
+            </picker-view-column>
+            <picker-view-column>
+            <view wx:for="{{days}}" wx:key="" style="line-height: 50px">{{item}}日</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>
+<view class='profit_content'>
+    <view class='profit_peoList' wx:for="{{list}}" wx:key="{{itemList.datemood}}" wx:for-index="idx" wx:for-item="itemList">
+        <view class="peoName">{{itemList.peoName}}</view>
+               <view class='pay_profit'>
+                    <view class="pay_day" wx:for="{{itemList.pay}}"  wx:key="">
+                        <view class='money'>+{{item.money}}元</view>
+                        <view class='day'>{{item.day}}</view>
+                    </view>
+               </view>
+    </view>
+</view>

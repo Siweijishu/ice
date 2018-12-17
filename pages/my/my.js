@@ -58,6 +58,11 @@ Page({
             url: '../us/comment/comment',
         })
     },
+    show_shouyi(){
+        wx.navigateTo({
+            url: '../us/profit/profit',
+        })
+    },
   onLoad: function (options) {
     wx.hideShareMenu()
   },

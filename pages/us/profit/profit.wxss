@@ -1,0 +1,106 @@
+
+.lable_tab{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 30rpx;
+    color: #101010;
+    box-shadow: 0 1rpx 0 rgba(0, 0, 0, .5);
+    text-align: center;
+}
+.lable_tab .profit_box{
+    flex-shrink: 0;
+    flex: 1;
+    padding: 10rpx 0;
+    position: relative;
+    box-sizing: border-box;
+    background: #fff;
+}
+.lable_tab .profit_box:first-child{
+    color: #f55;
+}
+.selsect_mood{
+    position: absolute;
+    height: 300rpx;
+    width: 100%;
+    top: 60rpx;
+    left: 0;
+    overflow-y: scroll;
+    border-left: 1rpx solid #ccc;
+    border-bottom: 1rpx solid #ccc;
+    box-sizing: border-box;
+    background: #fff;
+}
+.lable_tab .profit_box picker-view{
+    position: absolute;
+    width: 100%;
+    padding: 10rpx 0;
+    border-bottom:1rpx dashed #ccc; 
+}
+.lable_tab .profit_box .showMood{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* .selsect_mood view{
+    padding: 10rpx 0;
+    border-bottom:1rpx dashed #ccc; 
+}
+.selsect_mood view:last-child{
+    border: none;
+}
+.selLookColor{
+    background: #408CFC;
+    color: #fff;
+} */
+.profit_peoList{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap:wrap;
+    width: 680rpx;
+    height: auto;
+    border-radius:10rpx;
+    background: #fff ;
+    overflow: hidden;
+    margin:0 auto 20rpx; 
+    padding: 20rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+}
+.profit_peoList:first-child{
+    margin-top:20rpx; 
+}
+.list_p{
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom:20rpx; 
+}
+.pay_day{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:20rpx; 
+}
+.list_p:last-child,.pay_day:last-child{
+    margin-bottom:0; 
+}
+.peoName{
+    width:180rpx;
+    flex-shrink:0;
+}
+.pay_profit{
+    width: 400rpx;
+    flex-shrink: 0;
+}
+.money{
+    color: #f55;
+}
+.day{
+    color: #d3d3d3;
+}

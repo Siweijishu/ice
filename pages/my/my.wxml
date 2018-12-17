@@ -84,6 +84,17 @@
             <text class='iconfont icon-right1'></text>
         </view>
     </view>
+    <view class='mytool' catchtap='show_shouyi'>
+        <view class='tooltitle'>
+            <view class='toolicon tooliconFive'>
+                <image mode='aspectFit' src='../../img/shouyi.png'></image>
+            </view>
+            <view class='tooltext'>收益</view>
+        </view>
+        <view>
+            <text class='iconfont icon-right1'></text>
+        </view>
+    </view>
     <view class='mytool' catchtap='show_code' wx:if='{{userinfo.is_clerk == 1}}'>
         <view class='tooltitle'>
             <view class='toolicon tooliconFive'>
@@ -92,6 +103,7 @@
             <view class='tooltext'>推荐码</view>
         </view>
     </view>
+    
 </view>
 <view class='shoppingCar' catchtap='jump_shopCar'>
     <text class='iconfont icon-gouwucheman'></text>
