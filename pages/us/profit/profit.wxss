@@ -91,16 +91,16 @@
     margin-bottom:0; 
 }
 .peoName{
-    width:180rpx;
+    width:200rpx;
     flex-shrink:0;
 }
 .pay_profit{
     width: 400rpx;
     flex-shrink: 0;
 }
-.money{
+/* .money{
     color: #f55;
-}
+} */
 .day{
     color: #d3d3d3;
 }

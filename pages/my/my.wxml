@@ -84,12 +84,12 @@
             <text class='iconfont icon-right1'></text>
         </view>
     </view>
-    <view class='mytool' catchtap='show_shouyi'>
+    <view class='mytool' catchtap='show_shouyi' wx:if='{{userinfo.is_clerk == 1}}'>
         <view class='tooltitle'>
             <view class='toolicon tooliconFive'>
                 <image mode='aspectFit' src='../../img/shouyi.png'></image>
             </view>
-            <view class='tooltext'>收益</view>
+            <view class='tooltext'>推广金额</view>
         </view>
         <view>
             <text class='iconfont icon-right1'></text>
