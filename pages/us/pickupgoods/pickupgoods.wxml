@@ -88,3 +88,6 @@
         <button open-type="share"  catchtap='hiedModal'>赠送好友</button>
     </view>
 </view>
+<view class='gohome' catchtap='gobackHome'>
+    <image  src='../../../img/gobackHome.png'></image>
+</view>

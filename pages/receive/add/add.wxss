@@ -66,13 +66,14 @@ form{
 			background-position: 360px;
 		}
 	}
-
 .selectmodify{
     display: flex;
     height:50rpx;
     align-items: center;
-    margin-top:30rpx;
-    padding: 0 20rpx; 
+    padding: 20rpx 20rpx; 
+    letter-spacing:5rpx;
+    justify-content: space-between;
+    background: #fff;
 }
 .iconselect{
     line-height:0;

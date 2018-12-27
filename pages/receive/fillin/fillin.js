@@ -100,7 +100,7 @@ Page({
       }
     })
   },
-  // // 使用优惠卷
+  // // 使用优惠券
   // youhuiquan() {
   //   let carClick = this.data.carClick;
   //   let show = this.data.show;
@@ -113,7 +113,7 @@ Page({
   //   this.stopanimation();
 
   // },
-  // 使用现金卷
+  // 使用现金券
   xianjinquan() {
     let carClick = this.data.carClick;
     let show = this.data.show;
@@ -274,7 +274,7 @@ Page({
                     success: function () {
                       setTimeout(function () {
                           wx.navigateTo({
-                          url: '../payment/payment?id='+id,
+                              url: '../payment/payment?id=' + id + '&storage=' + data['pickup'] ,
                         })
                       }, 1000);
                     }

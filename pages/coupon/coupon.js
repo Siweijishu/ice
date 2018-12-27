@@ -25,8 +25,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userlist: [], //储存领取优惠卷人的信息
-    couponText: '满100元减5元优惠券', //优惠卷信息
+    userlist: [], //储存领取优惠券人的信息
+    couponText: '满100元减5元优惠券', //优惠券信息
     receive: false, //判断是否领取
     userNum: 0, //人数
     pages:1

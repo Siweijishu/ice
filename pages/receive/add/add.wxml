@@ -19,11 +19,11 @@
         <input name="address" type='text' value=''/>
     </view>
     <view class='selectmodify'>
-        <view class='iconselect'>
-            <icon type='success' size="20" color="#00E165" wx:if="{{selected==true}}" catchtap='selected'></icon>
-            <icon type='success' size="20" color="#d9d9d9" wx:else catchtap='selected' name="true"></icon>
-        </view>
         <view class='icontext'>设置默认地址</view>
+        <view class='iconselect'>
+            <icon type='success' size="25" color="#FF4948" wx:if="{{selected==true}}" catchtap='selected'></icon>
+            <icon type='success' size="25" color="#d9d9d9" wx:else catchtap='selected' name="true"></icon>
+        </view>
     </view>
     <view class="btn-area">
         <button class="{{onAm==true?'chuantou':''}}" formType="submit">保存地址</button>

@@ -137,7 +137,7 @@ Page({
     let index = e.currentTarget.dataset.index;
     let goodsList = this.data.goodsList;
     wx.showModal({
-      title: '警告',
+        title: '提示',
       content: '是否取消订单',
       success: function(res) {
         if (res.confirm) {
@@ -198,6 +198,11 @@ Page({
       goodsList: goodsList
     })
   },
+    gobackHome(){
+        wx.switchTab({
+            url: '../../index/index',
+        })
+    },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -288,10 +293,10 @@ Page({
       let index = res.target.dataset.id;
       let id = _this.data.goodsList[index].id;
       let state = res.target.dataset.status;
-      //   state 2-已完成 是分享优惠卷的传值
+      //   state 2-已完成 是分享优惠券的传值
       if (state == 1) {
         return {
-          title: "分享优惠卷",
+          title: "分享优惠券",
           path: "/pages/coupon/coupon?orderid=" + id,
           imageUrl: app.globalData.yhimg /*图片比例500：400*/
         }

@@ -78,7 +78,22 @@ page {
     font-size: 30rpx;
     margin-top: 40rpx;
 }
-
+.section{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top:20rpx; 
+}
+.section picker .picker{
+    border: none;
+    font-size:28rpx;
+}
+.section__title{
+    font-size: 30rpx;
+    width: 200rpx;
+    flex-shrink: 0;
+    color: #9d9d9d;
+}
 .select {
     display: flex;
     justify-content: space-between;

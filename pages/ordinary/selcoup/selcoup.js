@@ -5,7 +5,7 @@ Page({
    */
   data: {
       couponlist: [
-          // coupon:0-现金卷  1-优惠卷  initial开始日期，end到期日期，arrive满多少元，worth减多少元，state 状态：1-未过期，0-过期
+          // coupon:0-现金券  1-优惠券  initial开始日期，end到期日期，arrive满多少元，worth减多少元，state 状态：1-未过期，0-过期
           { coupon: 1, initial: "2018-07-16", end: "2018-8 - 31", arrive: 100, worth: 20, state: 1, select:false,},
           { coupon: 1, initial: "2018-07-16", end: "2018-8 - 20", arrive: 100, worth: 20, state: 0, select:false,},
           { coupon: 1, initial: "2018-07-16", end: "2018-8 - 31", arrive: 100, worth: 20, state: 1, select:false,},
@@ -31,7 +31,7 @@ Page({
         })
         // wx.showModal({
         //     title: '提示',
-        //     content: '是否使用这张优惠卷',
+        //     content: '是否使用这张优惠券',
         //     success:function(res){
         //         if(res.confirm){
         //             couponlist[index].select=true;

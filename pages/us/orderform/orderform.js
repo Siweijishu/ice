@@ -10,6 +10,11 @@ Page({
     // seeAssess 评论   true 已评论   false 未评论
     goodsList: [],
   },
+    gobackHome() {
+        wx.switchTab({
+            url: '../../index/index',
+        })
+    },
   // 更多列表
   gengduo(e) {
     let _this = this;
@@ -140,7 +145,7 @@ Page({
     let index = e.currentTarget.dataset.index;
     let goodsList = this.data.goodsList;
     wx.showModal({
-      title: '警告',
+      title: '提示',
       content: '是否取消订单',
       success: function(res) {
         if (res.confirm) {
@@ -317,7 +322,7 @@ Page({
     let id = _this.data.goodsList[index].id
     if (res.from === "button") {
       return {
-        title: "分享优惠卷",
+        title: "分享优惠券",
         path: "/pages/coupon/coupon?orderid=" + id,
         imageUrl: "app.globalData.yhimg" /*图片比例500：400*/
       }

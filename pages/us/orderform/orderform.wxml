@@ -52,7 +52,7 @@
         </view>
         <view class='goods_operate'>
              <view class='goods_btn'>
-                <button class='btn_share' open-type="share" wx:if="{{item.status>1}}" data-id='{{index}}' hover-class="other-button-hover">分享优惠卷</button>
+                <button class='btn_share' open-type="share" wx:if="{{item.status>1}}" data-id='{{index}}' hover-class="other-button-hover">分享优惠券</button>
                 <view class='btn  btn_share' wx:if="{{item.status==1}}" bindtap='pay' data-index="{{index}}">付款</view>
                 <view class='btn  btn_share' wx:if="{{ item.status>1 && item.status<6}}" catchtap='jump_goodsComment' data-index="{{index}}">去评价</view>
                 <view class='btn_refund btn' wx:if="{{item.status==1}}" catchtap='cancel' data-index="{{index}}">取消订单</view>
@@ -105,7 +105,7 @@
         </view>
          <view class='goods_operate'>
               <view class='goods_btn'>
-                <button class='btn_share' open-type="share" wx:if="{{item.state==2}}" data-id='{{index}}' hover-class="other-button-hover">分享优惠卷</button>
+                <button class='btn_share' open-type="share" wx:if="{{item.state==2}}" data-id='{{index}}' hover-class="other-button-hover">分享优惠券</button>
                 <view class='btn  btn_share' wx:if="{{item.state==1}}" bindtap='jump_coldetails' data-index="{{index}}">付款</view>
                 <view class='btn  btn_share' wx:if="{{ item.state==2 && item.seeAssess==false}}" catchtap='jump_goodsComment' data-index="{{index}}">去评价</view>
                 <view class='btn_refund btn' wx:if="{{item.state==1}}" catchtap='cancel' data-index="{{index}}">取消订单</view>
@@ -158,7 +158,7 @@
         </view>
          <view class='goods_operate'>
             <view class='goods_btn'>
-                <button class='btn_share' open-type="share" wx:if="{{item.state==2}}" data-id='{{index}}' hover-class="other-button-hover">分享优惠卷</button>
+                <button class='btn_share' open-type="share" wx:if="{{item.state==2}}" data-id='{{index}}' hover-class="other-button-hover">分享优惠券</button>
                 <view class='btn  btn_share' wx:if="{{item.state==1}}" bindtap='jump_coldetails' data-index="{{index}}">付款</view>
                 <view class='btn  btn_share' wx:if="{{ item.state==2 && item.seeAssess==false}}" catchtap='jump_goodsComment' data-index="{{index}}">去评价</view>
                 <view class='btn_refund btn' wx:if="{{item.state==1}}" catchtap='cancel' data-index="{{index}}">取消订单</view>
@@ -168,3 +168,6 @@
     </view>
 </view> -->
 <view class='tips'>只有这么多订单啦~</view>
+<view class='gohome' catchtap='gobackHome'>
+    <image  src='../../../img/gobackHome.png'></image>
+</view>

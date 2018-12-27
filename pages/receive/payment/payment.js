@@ -6,6 +6,7 @@ Page({
    */
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    storage:null,
     goods: []
   },
   jump_details(e) {
@@ -16,14 +17,26 @@ Page({
     })
   },
   jump_frig() {
-    wx.switchTab({
-      url: '../../frig/frig'
-    })
+      console.log(this.data.storage)
+      if (this.data.storage =='0'){
+          wx.navigateTo({
+              url: '../../us/orderform/orderform'
+          })
+      }else{
+          wx.switchTab({
+              url: '../../frig/frig'
+          })
+      }
+
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+      console.log(options)
+      this.setData({
+          storage: options.storage
+      })
     wx.hideShareMenu()
     var id = options.id
     this.setData({
@@ -103,7 +116,7 @@ Page({
     let _this = this;
     if (res.from === "button") {
       return {
-        title: "分享优惠卷",
+          title: "分享优惠券",
         path: "/pages/coupon/coupon?orderid=" + _this.data.id,
         imageUrl: app.globalData.yhimg /*图片比例500：400*/
       }

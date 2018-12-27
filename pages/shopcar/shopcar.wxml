@@ -2,8 +2,8 @@
     <view class='goodsList' wx:for="{{goodsList}}" wx:key="" bindtap='jump_details' data-index="{{index}}">
         <view class='goods_box'>
             <view class='select_box'  catchtap='select_fun' data-index="{{index}}">
-                <icon type="success" size="20" color="#FE4847" wx:if="{{item.select==true}}" catchtap='select_fun' data-index="{{index}}"></icon>
-                <icon type="success" size="20" color="#CCCCCC" wx:else catchtap='select_fun' data-index="{{index}}"></icon>
+                <icon type="success" size="22" color="#FE4847" wx:if="{{item.select==true}}" catchtap='select_fun' data-index="{{index}}"></icon>
+                <icon type="success" size="22" color="#CCCCCC" wx:else catchtap='select_fun' data-index="{{index}}"></icon>
             </view>
             <view class='goodsImg'>
                 <image src='{{item.img}}'></image>
@@ -28,8 +28,8 @@
 </view>
 <view id='footer_box'>
     <view class='all_select'>
-         <icon type="success" size="18" color="#FE4847" wx:if="{{selectall==true}}" catchtap='selectAll' data-index="{{index}}"></icon>
-        <icon type="circle" size="18" catchtap='selectAll' wx:else data-index="{{index}}"></icon>
+         <icon type="success" size="22" color="#FE4847" wx:if="{{selectall==true}}" catchtap='selectAll' data-index="{{index}}"></icon>
+        <icon type="circle" size="22" catchtap='selectAll' wx:else data-index="{{index}}"></icon>
         <view class='gooslistNum'>全选</view>
     </view>
     <view class='footer_btn'>

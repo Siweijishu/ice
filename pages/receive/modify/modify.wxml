@@ -22,8 +22,8 @@
     <view class='selectmodify'>
         <view class='icontext'>设置默认地址</view>
         <view class='iconselect'>
-            <icon type='success' size="20" color="#FF4948" wx:if="{{selected==true}}" catchtap='selected'></icon>
-            <icon type='success' size="20" color="#d9d9d9" wx:else catchtap='selected' name="true"></icon>
+            <icon type='success' size="25" color="#FF4948" wx:if="{{selected==true}}" catchtap='selected'></icon>
+            <icon type='success' size="25" color="#d9d9d9" wx:else catchtap='selected' name="true"></icon>
         </view>
 
     </view>

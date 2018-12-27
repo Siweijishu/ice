@@ -11,7 +11,13 @@
 
         <!-- <text class="iconfont icon-down"></text> -->
         <view class='enroll_input'>
-            <input type='text' name="address" placeholder='您所在的城市'></input>
+            <view class="section">
+                <view class="section__title">选择省市区：</view>
+                <picker  mode="region"  bindchange="bindRegionChange"  value="{{region}}"  custom-item="{{customItem}}" >
+                    <view class="picker">{{region[0]}} {{region[1]}} {{region[2]}}</view>
+                </picker>
+            </view>
+            <input type='text' name="address" placeholder='详情街道地址'></input>
             <text>告诉我们您所在的城市，以便我们为您制定个性化服务</text>
         </view>
         <view class='enroll_input'>
@@ -29,29 +35,30 @@
             <text class='title_text'>生日信息</text>
         </view>
         <view class='enroll_input'>
-            <text>请提供准确的生日信息，以便我们在您生日时，给您赠送优惠卷，代金卷等会员专属福利。</text>
+            <text>请提供准确的生日信息，以便我们在您生日时，给您赠送优惠券，代金券等会员专属福利。</text>
         </view>
         <view class='select_data'>
             <picker mode="date" bindchange="change" value="{{data}}">
                 <view class='select'>
                     <view class="picker">
-                        <view>年</view>
                         <view class='select_num'>{{date[0]}}</view>
+                        <view>年</view>
                         <text class="iconfont icon-down"></text>
                     </view>
                     <view class="picker">
-                        <view>月</view>
                         <view class='select_num'>{{date[1]}}</view>
+                        <view>月</view>
                         <text class="iconfont icon-down"></text>
                     </view>
                     <view class="picker">
-                        <view>日</view>
                         <view class='select_num'>{{date[2]}}</view>
+                        <view>日</view>
                         <text class="iconfont icon-down"></text>
                     </view>
                 </view>
             </picker>
         </view>
+        <view style='color:#f55;font-size:26rpx;font-weight:bold;margin-top:20rpx;'>注:生日不可修改，请正确填写</view>
     </view>
     <view class='tijiao'>
         <button class=' {{onclick1==true?"chuantou":""}}' formType="submit" data-formNum='1'>提交信息</button>

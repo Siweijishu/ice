@@ -39,7 +39,7 @@ var loadMsgData = function(that) {
           });
         } else {
           wx.showToast({
-            title: '已加载完全部',
+              title: '已加载完全部评价',
             icon: 'none',
             duration: 2000
           })

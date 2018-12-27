@@ -8,6 +8,8 @@ Page({
     // man为男，woman为女
     man: true,
     woman: false,
+    region: ['广东省', '广州市', '海珠区'],
+    customItem: '全部',
     date: [
       '2018', '01', '01'
     ],
@@ -82,6 +84,13 @@ Page({
       dates: e.detail.value
     });
   },
+//选择省市区
+    bindRegionChange(e) {
+        console.log('picker发送选择改变，携带值为', e.detail.value)
+        this.setData({
+            region: e.detail.value
+        })
+    },
   // 动画效果
   moveAnimation(e) {
     let that = this;

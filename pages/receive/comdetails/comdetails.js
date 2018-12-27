@@ -261,7 +261,7 @@ Page({
   onShareAppMessage: function(res) {
     if (res.from === "button") {
       return {
-        title: "分享优惠卷",
+        title: "分享优惠券",
         path: "/pages/coupon/coupon?orderid=" + this.data.id,
         imageUrl: "../../../img/honbao.png" /*图片比例500：400*/
       }

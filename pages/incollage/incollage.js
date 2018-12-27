@@ -15,6 +15,7 @@ Page({
     coupon_title: '',
     coupon_id: 0,
     coupon_money: 0,
+    is_type:0,
   },
 
   jump_address() {
@@ -77,6 +78,12 @@ Page({
   },
   jump_found() {
     var that = this
+      if (that.data.is_type==1){
+            return false;
+      }
+      that.setData({
+          is_type:1,
+      })
     var list = that.data.lists
     var data = []
     data['goods'] = that.data.goods

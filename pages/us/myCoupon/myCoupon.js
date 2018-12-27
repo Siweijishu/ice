@@ -7,7 +7,7 @@ Page({
   data: {
     menuTapCurrent:0,
     couponlist:[],
-    title:'你还没有获得优惠卷',
+      title:'你还没有获得优惠券',
     pagenum: 1
   },
   menuTap: function (e) {
@@ -74,7 +74,7 @@ Page({
             that.setData({
               couponlist: [],
               pagenum: that.data.pagenum + 1,
-              title:'你还没有获得优惠卷'
+                title:'你还没有获得优惠券'
             });
           } else {
             wx.showToast({

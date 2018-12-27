@@ -67,7 +67,7 @@
             <view class='toolicon tooliconFive'>
                 <image mode='aspectFit' src='../../img/youhui.png'></image>
             </view>
-            <view class='tooltext'>优惠卷/预付现金券</view>
+            <view class='tooltext'>优惠券/预付现金券</view>
         </view>
         <view>
             <text class='iconfont icon-right1'></text>

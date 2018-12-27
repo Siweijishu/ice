@@ -15,6 +15,11 @@ Page({
     showModal: false,
     oid: null,
   },
+    gobackHome() {
+        wx.switchTab({
+            url: '../../index/index',
+        })
+    },
   menuTap: function(e) {
     var current = e.currentTarget.dataset.current; //获取到绑定的数据
     //改变menuTapCurrent的值为当前选中的menu所绑定的数据
