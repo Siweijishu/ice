@@ -108,12 +108,24 @@ Page({
     // console.log(this.data.date);
     // console.log(e.detail.value);
     // console.log(e)
+    var reg = /^1[0-9]{10}$/; //验证规则
+    var phoneNum = e.detail.value.tel;
+      var phonet_tel = e.detail.value.t_te;
+    var flag = reg.test(phoneNum); //true
+      var flag2 = reg.test(phonet_tel); //true
     let formNum = e.detail.target.dataset.formnum;
     let that = this;
     let contract = this.data.contract;
     let show = this.data.show;
+
     if (formNum == 1) {
-      if (e.detail.value.tel.length == 0) {
+        if (flag == false || flag2==false){
+            wx.showToast({
+                title: '亲，请输入正确手机号码',
+                icon: 'none',
+                duration: 2000
+            })
+        }else if (e.detail.value.tel.length == 0) {
         wx.showToast({
           title: '亲，您还没填写手机号',
           icon: 'none',
