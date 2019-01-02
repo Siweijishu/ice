@@ -76,9 +76,12 @@ Page({
       // console.log(this.data.id);
       // console.log(this.data.selected)
       // console.log(res);
-      // // 数据保存后才执行页面跳转
+      // // 数据保存后才执行页面跳转   
       
     var that = this
+    var reg = /^1[0-9]{10}$/; //验证规则
+    var phoneNum = e.detail.value.tel;
+    var flag = reg.test(phoneNum); //true
     if (e.detail.value.name.length == 0) {
       wx.showModal({
         title: '提示',
@@ -89,8 +92,7 @@ Page({
           }
         }
       })
-    }
-    else if (e.detail.value.tel.length == 0) {
+    }else if (e.detail.value.tel.length == 0) {
       wx.showModal({
         title: '提示',
         content: '电话密码不能为空',
@@ -100,6 +102,11 @@ Page({
           }
         }
       })
+    } else if (flag==false){
+        wx.showToast({
+            title: '请输入正确的电话号码',
+            icon:'none'
+        })
     } else {
       wx.request({
         url: app.globalData.servsersip + 'api.php/Wxfans/newaddress',

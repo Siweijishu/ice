@@ -49,7 +49,7 @@
     </view>
     <view class='other_conten'>
         <view class='collage'>
-            <view class='collage_title'>拼单人数：</view>
+            <view class='collage_title'>AA团人数：</view>
             <view class='collage_small small'>
                 <text class='iconfont icon-jianhao' catchtap='jian_tianchong'></text>
                 <text class='peo_num'>{{peopleNum}}</text>
@@ -92,17 +92,21 @@
     <view class='other_conten'>
         <view class='other_title'>
             <text class='iconfont icon-huabanfuben'></text>
-            <text class='iconTitle'>拼单信息</text>
+            <text class='iconTitle'>AA团信息</text>
         </view>
         <view class='tips_text'>
-            您所拼单的商品，将在所有人完成付款后，店铺才为您进行发货，请尽快去敦促您的小伙伴发货哦~
+            <view>1、发起人选择商品，开启AA团</view>
+            <view>2、设定参团人数后系统自动折算人均支付金额</view>
+            <view>3、邀请好友参与AA团  </view>
+            <view>4、达到参团人数后顺利成团，团成员均分订单内商品 </view>
+            <view>5、若24小时内参团人数未达到，则全额退款</view>
         </view>
     </view>
 </view>
 
 <view class='footer_box'>
     <view class='show_people_num'>
-        <text class='foot_red'>{{peopleNum}}人</text>参与拼单
+        <text class='foot_red'>{{peopleNum}}人</text>参与AA团
     </view>
     <view class='show_btn_money'>
         <view class='personal_money'>
