@@ -239,7 +239,20 @@ page {
     color: #fff;
     background: -webkit-linear-gradient(-30deg, rgba(255, 255, 255, 0) 100rpx, rgba(255, 255, 255, 0.3) 180rpx, rgba(255, 255, 255, 0.3)200rpx, rgba(255, 255, 255, 0) 260rpx) -300rpx 0 no-repeat;
 }
-
+.region .picker{
+  color:#999;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+.region .picker view{
+  display: block;
+  border-bottom: 1rpx solid #ddd;
+  margin-right:10rpx; 
+}
+.region .picker view:last-child{
+  margin: 0;
+}
 .opent_box {
     display: block;
 }

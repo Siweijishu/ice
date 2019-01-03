@@ -123,6 +123,9 @@ Page({
       }
     });
   },
+  bindFormSubmit: function (e) {
+    console.log(e)
+  },
   // 去评价
   jump_goodsComment(e) {
     let index = e.currentTarget.dataset.index;

@@ -19,7 +19,8 @@ Page({
     couponlist: [],
     coupon_title:'',
     coupon_id:0,
-    coupon_money: 0,
+    coupon_money: 0, 
+    is_type: 0,
   },
   select_storage() {
     let storage = this.data.storage;
@@ -245,6 +246,12 @@ Page({
         },
       })
     } else {
+      if (that.data.is_type == 1) {
+        return false;
+      }
+      that.setData({
+        is_type: 1,
+      })
       wx.request({
         url: app.globalData.servsersip + 'api.php/Weixinpay/pay',
         data: data,
@@ -364,7 +371,8 @@ Page({
           lists: res.data.data,
           goodsList: res.data.data.goods,
           couponlist: res.data.data.coupon,
-          freight:res.data.data.freight
+          freight:res.data.data.freight,
+          is_type:0
         });
       }
     })

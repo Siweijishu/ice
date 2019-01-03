@@ -64,7 +64,7 @@ Page({
     wx.showModal({
       title: '提示',
       content: '确认取消订单？',
-      success: function (res) {
+      success: function(res) {
         if (res.confirm) {
           wx.request({
             url: app.globalData.servsersip + 'api.php/wxfans/orders_edit',
@@ -76,7 +76,7 @@ Page({
             header: {
               'Content-Type': 'application/x-www-form-urlencoded'
             },
-            success: function (res) {
+            success: function(res) {
               //--init data
               var status = res.data.data;
               if (status == 1) {
@@ -95,7 +95,7 @@ Page({
                 });
               }
             },
-            fail: function () {
+            fail: function() {
               // fail
               wx.showToast({
                 title: '网络异常！',
@@ -114,7 +114,7 @@ Page({
     let _this = this;
     wx.showModal({
       title: '是否确认付款？',
-      success: function (res) {
+      success: function(res) {
         if (res.confirm) {
           var data = []
           data['id'] = _this.data.id
@@ -126,7 +126,7 @@ Page({
               'Content-Type': 'application/x-www-form-urlencoded'
             },
             method: 'POST',
-            success: function (res) {
+            success: function(res) {
 
               if (res.data.msg == 'success') {
                 console.log(res.data.data);
@@ -138,26 +138,26 @@ Page({
                     'package': res.data.data.package,
                     'signType': res.data.data.signType,
                     'paySign': res.data.data.paySign,
-                    'success': function (res) {
+                    'success': function(res) {
                       //console.log(res);
                       wx.showToast({
                         title: '付款成功',
                         icon: 'success',
                       });
-                      setTimeout(function () {
+                      setTimeout(function() {
                         wx.redirectTo({
                           url: '../us/collage/collage'
                         })
                       }, 2000)
                     },
-                    'fail': function (res) {
+                    'fail': function(res) {
                       wx.showToast({
                         title: '支付失败',
                         icon: 'none',
                       })
                       //console.log(res);
                     },
-                    'complete': function (res) {
+                    'complete': function(res) {
                       //console.log(res);
                     }
                   });
@@ -220,13 +220,13 @@ Page({
           header: { // 设置请求的 header
             'Content-Type': 'application/x-www-form-urlencoded'
           },
-          success: function (res) {
+          success: function(res) {
             console.log(res.data.data)
             that.setData({
               userlist: res.data.data,
             });
           },
-          fail: function () {
+          fail: function() {
             // fail
             wx.showToast({
               title: '网络异常！',
@@ -243,10 +243,14 @@ Page({
         });
       }
     })
-   
+
 
   },
-
+  shouye() {
+    wx.switchTab({
+      url: '../index/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

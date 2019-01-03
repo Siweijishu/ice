@@ -76,16 +76,142 @@ Page({
       personalmoney: personalmoney.toFixed(2)
     })
   },
-  jump_found() {
+  // jump_found() {
+  //   var that = this
+  //   var list = that.data.lists
+  //   var data = []
+  //   data['goods'] = that.data.goods
+  //   data['openid'] = app.globalData.myopenid
+  //   data['uid'] = app.globalData.uid
+  //   data['price'] = parseFloat(list.price) //商品价格
+  //   data['logistics'] = parseFloat(list.freight) //邮费
+  //   data['coupon_id'] = parseInt(that.data.coupon_id)
+  //   data['coupon_price'] = parseFloat(that.data.coupon_money) //优惠券金额
+  //   data['price_h'] = parseFloat(list.price) + parseFloat(list.freight) - parseFloat(that.data.coupon_money)
+  //   data['goods_num'] = list.num
+  //   data['receiver'] = list.a_name
+  //   data['tel'] = list.a_tel
+  //   data['order_type'] = 2
+  //   data['p_num'] = that.data.peopleNum
+  //   data['p_price'] = that.data.personalmoney
+  //   data['address_xq'] = list.a_address_xq
+  //   console.log(data)
+  //   if (list.a_id == 0) {
+  //     wx: wx.showToast({
+  //       title: '请选择联系人及电话',
+  //       icon: 'none',
+  //       duration: 1500,
+  //     })
+  //   } else if (list.is_freight == false) {
+  //     wx: wx.showToast({
+  //       title: '订单中的商品暂时不配送到该城市',
+  //       icon: 'none',
+  //       duration: 1500,
+  //     })
+  //   }
+  //   else {
+  //     if (that.data.is_type == 1) {
+  //       return false;
+  //     }
+  //     that.setData({
+  //       is_type: 1,
+  //     })
+  //     wx.request({
+  //       url: app.globalData.servsersip + 'api.php/Weixinpay/pay',
+  //       data: data,
+  //       header: {
+  //         'Content-Type': 'application/x-www-form-urlencoded'
+  //       },
+  //       method: 'POST',
+  //       success: function(res) {
+
+  //         if (res.data.msg == 'success') {
+  //           console.log(res.data.data);
+  //           var id = res.data.data.id
+  //           //console.log('调起支付');
+  //           if (res.data.data.goodscode == 1) {
+  //             wx.requestPayment({
+  //               'timeStamp': res.data.data.timeStamp,
+  //               'nonceStr': res.data.data.nonceStr,
+  //               'package': res.data.data.package,
+  //               'signType': res.data.data.signType,
+  //               'paySign': res.data.data.paySign,
+  //               'success': function(res) {
+  //                 //console.log(res);
+  //                 wx.showToast({
+  //                   title: '付款成功',
+  //                   icon: 'success',
+  //                   mask: true,
+  //                   success: function() {
+  //                     setTimeout(function() {
+  //                       wx.navigateTo({
+  //                         url: '../receive/found/found?id=' + id,
+  //                       })
+  //                     }, 1000);
+  //                   }
+  //                 })
+  //               },
+  //               'fail': function(res) {
+  //                 wx.showToast({
+  //                   title: '支付失败',
+  //                   icon: 'none',
+  //                 })
+  //                 setTimeout(function() {
+  //                   // wx.navigateTo({
+  //                   //   url: '../receive/found/found?id=' + id,
+  //                   // })
+  //                   wx.reLaunch({
+  //                     url: '../us/collage/collage',
+  //                   })
+  //                 }, 1000)
+  //                 //console.log(res);
+  //               },
+  //               'complete': function(res) {
+  //                 //console.log(res);
+  //               }
+  //             });
+  //           } else if (res.data.data.goodscode == 3) {
+  //             wx.showToast({
+  //               title: res.data.data.remark,
+  //               icon: 'none',
+  //             });
+  //           } else if (res.data.data.goodscode == 2) {
+  //             wx.showToast({
+  //               title: '下单成功',
+  //               icon: 'success',
+  //               mask: true,
+  //               success: function () {
+  //                 setTimeout(function () {
+  //                   wx.navigateTo({
+  //                     url: '../receive/found/found?id=' + id,
+  //                   })
+  //                 }, 1000);
+  //               }
+  //             })
+  //           }else {
+  //             wx.showToast({
+  //               title: '下单失败',
+  //               icon: 'none',
+  //               duration: 2000
+  //             });
+  //           }
+
+  //         } else {
+  //           wx.showToast({
+  //             title: res.data.msg,
+  //             icon: 'none',
+  //           })
+  //         }
+  //       }
+  //     });
+  //   }
+
+  // },
+  bindFormSubmit: function (e) {
     var that = this
-      if (that.data.is_type==1){
-            return false;
-      }
-      that.setData({
-          is_type:1,
-      })
     var list = that.data.lists
     var data = []
+    var formID = e.detail.formId;
     data['goods'] = that.data.goods
     data['openid'] = app.globalData.myopenid
     data['uid'] = app.globalData.uid
@@ -98,6 +224,7 @@ Page({
     data['receiver'] = list.a_name
     data['tel'] = list.a_tel
     data['order_type'] = 2
+    data['fromid'] = formID
     data['p_num'] = that.data.peopleNum
     data['p_price'] = that.data.personalmoney
     data['address_xq'] = list.a_address_xq
@@ -116,6 +243,12 @@ Page({
       })
     }
     else {
+      if (that.data.is_type == 1) {
+        return false;
+      }
+      that.setData({
+        is_type: 1,
+      })
       wx.request({
         url: app.globalData.servsersip + 'api.php/Weixinpay/pay',
         data: data,
@@ -123,7 +256,7 @@ Page({
           'Content-Type': 'application/x-www-form-urlencoded'
         },
         method: 'POST',
-        success: function(res) {
+        success: function (res) {
 
           if (res.data.msg == 'success') {
             console.log(res.data.data);
@@ -136,14 +269,14 @@ Page({
                 'package': res.data.data.package,
                 'signType': res.data.data.signType,
                 'paySign': res.data.data.paySign,
-                'success': function(res) {
+                'success': function (res) {
                   //console.log(res);
                   wx.showToast({
                     title: '付款成功',
                     icon: 'success',
                     mask: true,
-                    success: function() {
-                      setTimeout(function() {
+                    success: function () {
+                      setTimeout(function () {
                         wx.navigateTo({
                           url: '../receive/found/found?id=' + id,
                         })
@@ -151,12 +284,12 @@ Page({
                     }
                   })
                 },
-                'fail': function(res) {
+                'fail': function (res) {
                   wx.showToast({
                     title: '支付失败',
                     icon: 'none',
                   })
-                  setTimeout(function() {
+                  setTimeout(function () {
                     // wx.navigateTo({
                     //   url: '../receive/found/found?id=' + id,
                     // })
@@ -166,7 +299,7 @@ Page({
                   }, 1000)
                   //console.log(res);
                 },
-                'complete': function(res) {
+                'complete': function (res) {
                   //console.log(res);
                 }
               });
@@ -188,7 +321,7 @@ Page({
                   }, 1000);
                 }
               })
-            }else {
+            } else {
               wx.showToast({
                 title: '下单失败',
                 icon: 'none',
@@ -205,7 +338,6 @@ Page({
         }
       });
     }
-
   },
   // 选择优惠券
   jump_selectcoupon() {
@@ -326,6 +458,7 @@ Page({
           goodsList: res.data.data.goods,
           total_p: res.data.data.total_p,
           couponlist: res.data.data.coupon,
+          is_type: 0
         });
         that.sum();
       }

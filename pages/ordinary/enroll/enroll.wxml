@@ -14,7 +14,25 @@
             <view class="section">
                 <view class="section__title">选择省市区：</view>
                 <picker  mode="region"  bindchange="bindRegionChange"  value="{{region}}"  custom-item="{{customItem}}" >
-                    <view class="picker">{{region[0]}} {{region[1]}} {{region[2]}}</view>
+                    <!-- <view class="picker">
+                      <view>{{region[0]}}</view>
+                      <view>{{region[1]}}</view>
+                      <view>{{region[2]}}</view>
+                    </view> -->
+                     <view class='select' style='color:#999'>
+                        <view class="picker" style='border-bottom:1rpx solid #ddd'>
+                            <view class='select_num'>{{region[0]}}</view>
+                            <text class="iconfont icon-down"></text>
+                        </view>
+                        <view class="picker" style='border-bottom:1rpx solid #ddd'>
+                            <view class='select_num'>{{region[1]}}</view>
+                            <text class="iconfont icon-down"></text>
+                        </view>
+                        <view class="picker" style='border-bottom:1rpx solid #ddd'>
+                            <view class='select_num'>{{region[2]}}</view>
+                            <text class="iconfont icon-down"></text>
+                        </view>
+                      </view>
                 </picker>
             </view>
             <input type='text' name="address" placeholder='详情街道地址'></input>

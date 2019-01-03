@@ -103,6 +103,7 @@
             <!--pickupgoods.state 判断状态值是否显示  -->
             <button class='fff_btn' catchtap='confirm_btn' wx:if="{{pickupgoods.status ==1}}">取消订单</button>
              <button class='fff_btn' open-type="contact" session-from="weapp"  wx:if="{{pickupgoods.status >=3}}">申请售后</button>
+               <button class='fff_btn' catchtap='shouye' wx:if="{{pickupgoods.status >=3}}">返回首页</button>
         </view>
     </view>
 </view>

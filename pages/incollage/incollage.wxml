@@ -1,3 +1,4 @@
+<form bindsubmit="bindFormSubmit"  report-submit="true">
 <view class='incollage_box'>
     <view class='goods_list' wx:for="{{goodsList}}" wx:key="">
         <view class='goods_content'>
@@ -114,10 +115,12 @@
             <text class='foot_red'>￥{{personalmoney}}</text>
         </view>
         <view class='show_btn'>
-            <button catchtap='jump_found'>AA团</button>
+            <button form-type='submit'>AA团</button>
+            <!-- catchtap='jump_found'  -->
         </view>
     </view>
 </view>
+</form>
 <!-- 弹窗 -->
 <!-- <view class='mordwidos {{show==true?"hidemodal":""}}' bindtap='close_modal' catchtouchmove='true'>
     <view class='bottom_modal' catchtap='stop' animation="{{animation}}">

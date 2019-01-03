@@ -9,7 +9,7 @@ Page({
     man: true,
     woman: false,
     region: ['广东省', '广州市', '海珠区'],
-    customItem: '全部',
+    customItem: '',
     date: [
       '2018', '01', '01'
     ],
@@ -67,7 +67,8 @@ Page({
     }
     this.setData({
       man: man,
-      woman: woman
+      woman: woman,
+      gender: 0
     })
   },
   // 年
@@ -84,13 +85,13 @@ Page({
       dates: e.detail.value
     });
   },
-//选择省市区
-    bindRegionChange(e) {
-        console.log('picker发送选择改变，携带值为', e.detail.value)
-        this.setData({
-            region: e.detail.value
-        })
-    },
+  //选择省市区
+  bindRegionChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      region: e.detail.value
+    })
+  },
   // 动画效果
   moveAnimation(e) {
     let that = this;
@@ -110,22 +111,31 @@ Page({
     // console.log(e)
     var reg = /^1[0-9]{10}$/; //验证规则
     var phoneNum = e.detail.value.tel;
-      var phonet_tel = e.detail.value.t_te;
+    var phonet_tel = e.detail.value.t_tel;
     var flag = reg.test(phoneNum); //true
-      var flag2 = reg.test(phonet_tel); //true
+    var flag2 = reg.test(phonet_tel); //true
     let formNum = e.detail.target.dataset.formnum;
     let that = this;
     let contract = this.data.contract;
     let show = this.data.show;
+    let region = this.data.region;
 
     if (formNum == 1) {
-        if (flag == false || flag2==false){
-            wx.showToast({
-                title: '亲，请输入正确手机号码',
-                icon: 'none',
-                duration: 2000
-            })
-        }else if (e.detail.value.tel.length == 0) {
+      if (flag == false) {
+        wx.showToast({
+          title: '亲，请输入正确手机号码',
+          icon: 'none',
+          duration: 2000
+        })
+      } else if (flag2 == false && phonet_tel != 0) {
+        wx.showToast({
+          title: '亲，推荐人的电话号码不正确',
+          icon: 'none',
+          duration: 2000
+        })
+        that.onClickAm(that)
+        return false;
+      } else if (e.detail.value.tel.length == 0) {
         wx.showToast({
           title: '亲，您还没填写手机号',
           icon: 'none',
@@ -171,7 +181,7 @@ Page({
         data['t_tel'] = e.detail.value.t_tel
         data['uid'] = app.globalData.uid
         data['birthday'] = e.detail.value.birthday
-        data['address'] = e.detail.value.address
+        data['address'] = region[0] + region[1] + region[2] + e.detail.value.address
         data['money'] = lists.money
         data['is_recharge'] = lists.is_recharge
         data['m_id'] = lists.m_id

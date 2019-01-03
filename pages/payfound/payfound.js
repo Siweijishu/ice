@@ -7,7 +7,8 @@ Page({
   data: {
     goods: [],
     seemode: false,
-    userlist: []
+    userlist: [],
+    is_type: 0,
   },
   //   更多
   mode() {
@@ -23,6 +24,17 @@ Page({
     data['openid'] = app.globalData.myopenid
     data['id'] = this.data.id
     data['uid'] = app.globalData.uid
+    if (data['openid'] == '' || data['uid'] ==0 ){
+      wx.navigateTo({
+        url: '../login/login?types=2',
+      })
+    }
+    if (this.data.is_type == 1) {
+      return false;
+    }
+    this.setData({
+      is_type: 1,
+    })
     wx.request({
       url: app.globalData.servsersip + 'api.php/Weixinpay/payt',
       data: data,
@@ -56,8 +68,11 @@ Page({
                       title: '支付完成',
                       icon: 'success',
                       success: function(res) {
-                          wx.switchTab({
-                            url: '../index/index',
+                        //   wx.switchTab({
+                        //     url: '../index/index',
+                        // })
+                        wx.navigateTo({
+                          url: '../us/collage/collage',
                         })
                       },
                     })
