@@ -22,6 +22,7 @@ Page({
     coupon_money: 0, 
     is_type: 0,
     adjust:true,//用来阻止点击付款按钮式键盘弹起
+    disabled:false//
   },
   select_storage() {
     let storage = this.data.storage;
@@ -209,7 +210,8 @@ Page({
     var list = that.data.lists
     var data = []
     that.setData({
-      adjust:false
+      adjust:false,
+      disabled:true,
     })
     data['goods'] = that.data.goods
     data['openid'] = app.globalData.myopenid
