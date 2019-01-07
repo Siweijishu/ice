@@ -28,10 +28,10 @@
 <view class='pick_goodsBox'>
     <view class='Title blue'>配送时间</view>
     <view class='select_give'>
-        <view class='give_box' wx:for="{{give}}" wx:key="" >
+        <view class='give_box' wx:for="{{give}}" wx:key="" catchtap='select_give' data-index="{{index}}">
             <view class='give_icon'>
-                <icon class='select' type="success" size="18" color='#3C8CFF' wx:if="{{item.selected==true}}" data-index="{{index}}" catchtap='select_give'></icon>
-                <icon class='select' type="circle" size="18"  wx:else="{{item.selected==false}}" data-index="{{index}}" catchtap='select_give'></icon>
+                <icon class='select' type="success" size="18" color='#3C8CFF' wx:if="{{item.selected==true}}" data-index="{{index}}" ></icon>
+                <icon class='select' type="circle" size="18"  wx:else="{{item.selected==false}}" data-index="{{index}}" ></icon>
             </view>
             <view class='give_text {{item.selected==true?"colortext":""}}'>{{item.day}}</view>
         </view>

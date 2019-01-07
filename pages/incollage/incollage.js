@@ -17,7 +17,11 @@ Page({
     coupon_money: 0,
     is_type:0,
   },
-
+  gobackHome() {
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  },
   jump_address() {
     var goods = this.data.goods
     wx.navigateTo({

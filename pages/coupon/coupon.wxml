@@ -1,8 +1,8 @@
 <view class='coupon_box' style='background:{{bg}} '>
     <view class='topImg'>
-        <image mode='aspectFit' src='../../../img/red.png'></image>
+        <image mode='widthFix' src='/img/red.png'></image>
         <view class='explain'>
-            <view><image mode='aspectFit'  src='../../img/storeNane.png'></image></view>
+            <view><image mode='widthFix'  src='/img/storeNane.png'></image></view>
         </view>
         <view class='lable'>{{list.couponText}}</view>
          

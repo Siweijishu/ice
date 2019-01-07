@@ -119,7 +119,6 @@ Page({
     let contract = this.data.contract;
     let show = this.data.show;
     let region = this.data.region;
-
     if (formNum == 1) {
       if (flag == false) {
         wx.showToast({

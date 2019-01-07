@@ -10,7 +10,7 @@ button::after{
 }
 .frigList{
     margin: 15rpx auto 0;
-    height: 330rpx;
+    height: auto;
     background: #fff;
     
 }
@@ -18,8 +18,7 @@ button::after{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50rpx;
-    padding: 0 20rpx;
+    padding: 20rpx;
     border-bottom:1rpx solid #dadada; 
 }
 .goodsSection{

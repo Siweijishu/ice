@@ -9,10 +9,10 @@
         "pages/shopcar/shopcar",
         "pages/incollage/incollage",
         "pages/details/details",
-        "pages/coupon/coupon",
         "pages/coldetails/coldetails",
         "pages/payfound/payfound",
         "pages/activity/activity",
+        "pages/coupon/coupon",
         "pages/login/login"
     ],
     "window": {

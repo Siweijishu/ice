@@ -15,9 +15,9 @@
                 </view>
                 <view class='goods_content'>
                     <view class='name'>{{item.name}}</view>
-                    <view class='num'>数量: ×{{item.price}}</view>
+                    <view class='num'>数量: ×{{item.num}}</view>
                     <view class='momey'>
-                        <view class='univalent'>单价：￥{{item.money}}</view>
+                        <view class='univalent'>单价：￥{{item.pirce}}</view>
                     </view>
                     <view class='sum'>
                         <text>￥{{item.prices}}</text> 

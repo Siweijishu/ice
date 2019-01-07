@@ -99,7 +99,8 @@
         </view>
        <view class='confirm_btn'>
             <button class='red_btn' catchtap="payment" wx:if="{{pickupgoods.status ==1}}">立即付款</button>
-            <button class='red_btn' open-type="share" wx:if="{{pickupgoods.status ==2}}">分享优惠券</button>
+            <button class='red_btn' open-type="share" data-index="1" wx:if="{{pickupgoods.status ==2}}">分享优惠券</button>
+            <button class='fff_btn' open-type="share" data-index="2" wx:if="{{pickupgoods.status ==2}}">邀请拼单</button>
             <!--pickupgoods.state 判断状态值是否显示  -->
             <button class='fff_btn' catchtap='confirm_btn' wx:if="{{pickupgoods.status ==1}}">取消订单</button>
              <button class='fff_btn' open-type="contact" session-from="weapp"  wx:if="{{pickupgoods.status >=3}}">申请售后</button>

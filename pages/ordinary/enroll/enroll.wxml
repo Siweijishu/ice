@@ -97,8 +97,8 @@
                 <view class='xuanzhong'>
                     <image mode='aspectFit' src='../../../img/huiyuan.png'></image>
                 </view>
-                <view class='orNot'>
-                    <icon type='success' size='18' color='{{contract==true?"#ff4f4f":"#999"}}' catchtap='contractTrue'></icon>
+                <view class='orNot' catchtap='contractTrue'>
+                    <icon type='success' size='18' color='{{contract==true?"#ff4f4f":"#999"}}' ></icon>
                     <view class='contract'>
                         我已理解会员相关规则及权益，并同意加入会员店成为softcrush轻遇会员。
                     </view>

@@ -10,9 +10,9 @@ Page({
     goodsList: [],
     freight: 0,
     // 储存
-    storage: true,
+    storage: false,
     //发货
-    delivery: false,
+    delivery: true,
     isShow: false,
     show: false, //显示隐藏
     carClick: null, //判断显示的是1为 优惠券，2为现金券
@@ -21,6 +21,7 @@ Page({
     coupon_id:0,
     coupon_money: 0, 
     is_type: 0,
+    adjust:true,//用来阻止点击付款按钮式键盘弹起
   },
   select_storage() {
     let storage = this.data.storage;
@@ -207,6 +208,9 @@ Page({
     var that = this
     var list = that.data.lists
     var data = []
+    that.setData({
+      adjust:false
+    })
     data['goods'] = that.data.goods
     data['openid'] = app.globalData.myopenid
     data['uid'] = app.globalData.uid

@@ -50,13 +50,13 @@
     </view>
 
     <view class='select_icon'>
-      <view class='select_radio' catchtap='select_storage'>
-        <icon type='success' size="20" color="{{storage==true?'#ff4f4f':'#CFCFCF'}}"></icon>
-        <text>立即发货</text>
-      </view>
       <view class='select_radio' catchtap='select_delivery'>
         <icon type='success' size="20" color="{{delivery==true?'#ff4f4f':'#CFCFCF'}}"></icon>
         <text>存入冰箱</text>
+      </view>
+      <view class='select_radio' catchtap='select_storage'>
+        <icon type='success' size="20" color="{{storage==true?'#ff4f4f':'#CFCFCF'}}"></icon>
+        <text>立即发货</text>
       </view>
     </view>
   </view>
@@ -81,7 +81,7 @@
     </view>
     <view class='user_text'>
       <view>买家留言</view>
-      <textarea placeholder='请输入留言…' class='textarea' name='textarea' show-confirm-bar='' id="text-area" style='font-size:28rpx;' wx:if="{{show == false}}"></textarea>
+      <textarea placeholder='请输入留言…' adjust-position="{{adjust}}" class='textarea' name='textarea' show-confirm-bar='' id="text-area" style='font-size:28rpx;' wx:if="{{show == false}}"></textarea>
     </view>
   </view>
   <view id='footer_box' hover-stop-propagation='true'>

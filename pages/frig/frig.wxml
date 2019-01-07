@@ -1,8 +1,8 @@
 <view class='frigbox'>
     <view class='frigList' wx:for="{{frigGoods}}" wx:key="">
-        <view class='goods_checkbox'>
-            <icon type='success' size='22' color='#FF4948' wx:if="{{item.selected}}" data-index="{{index}}" catchtap='selectList'></icon>
-            <icon type='success' size='22' color='#D9D9D9' wx:else data-index="{{index}}" catchtap='selectList'></icon>
+        <view class='goods_checkbox'  catchtap='selectList'  data-index="{{index}}">
+            <icon type='success' size='22' color='#FF4948' wx:if="{{item.selected}}" data-index="{{index}}"></icon>
+            <icon type='success' size='22' color='#D9D9D9' wx:else data-index="{{index}}"></icon>
         </view>
         <view class='goodsSection'>
             <view class='frigGoodsImg' bindtap='jump_details' data-index="{{index}}">

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    //    state:0-待付款 1-未发货 2-未收货货 3-已完成
+    //    state:0-待付款 1-未发货 2-未收货货 3-已完成 
     pickupgoods: {
       orderNum: "201871112541671",
       state: 0,
@@ -297,12 +297,21 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function(res) {
+    console.log(res);
     if (res.from === "button") {
-      return {
-        title: "分享优惠券",
-        path: "/pages/coupon/coupon?orderid=" + this.data.id,
-        imageUrl: "../../../img/honbao.png" /*图片比例500：400*/
+      if (res.target.dataset.index == 2) {
+        return {
+          title: "与好友参与AA团吧~",
+          path: "/pages/payfound/payfound?id=" + this.data.id,
+          imageUrl: app.globalData.ptimg /*图片比例500：400*/
+        }
+      } else if (res.target.dataset.index == 1) {
+        return {
+          title: "分享优惠券",
+          path: "/pages/coupon/coupon?orderid=" + this.data.id,
+          imageUrl: "../../../img/honbao.png" /*图片比例500：400*/
+        }
       }
-    }
+    } 
   }
 })
