@@ -205,3 +205,19 @@ button::after{
     font-size: 24rpx;
     line-height: 80rpx;
 }
+.gohome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:fixed;
+    width:80rpx;
+    height:80rpx;
+    background:rgba(0, 0, 0, .7);
+    bottom:150rpx;
+    right:0rpx;
+    border-radius:10rpx; 
+}
+.gohome image{
+    width: 85%;
+    height: 85%;
+}

@@ -81,3 +81,6 @@
         </view>
     </view>
 </view>
+<view class='gohome' catchtap='gobackHome'>
+    <image  src='/img/gobackHome.png'></image>
+</view>

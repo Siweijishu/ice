@@ -18,6 +18,12 @@ Page({
       seemode: seemode
     })
   },
+  //回首页
+  gobackHome() {
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  },
   //付款
   payment() {
     var data = []

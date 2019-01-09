@@ -67,6 +67,6 @@
   </view>
 </view>
 <view class='gohome' catchtap='gobackHome'>
-    <image  src='../../../img/gobackHome.png'></image>
+    <image  src='/img/gobackHome.png'></image>
 </view>
 <view class='tips'>只有这么多订单啦~</view>
