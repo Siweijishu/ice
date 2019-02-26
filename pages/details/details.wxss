@@ -48,6 +48,9 @@ page{
 .det_border{
     margin-top:10rpx;
     padding-top:10rpx;
+    padding-bottom:100rpx;
+    background:#fff;
+
 }
 .detail_content{
     width: 710rpx;
